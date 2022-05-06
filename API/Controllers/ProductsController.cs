@@ -5,6 +5,8 @@ using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace API.Controllers
 {
@@ -17,8 +19,7 @@ namespace API.Controllers
         public ProductsController(StoreContext context)
         {
             _context = context;
-        }
-
+        } 
         [HttpGet]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
