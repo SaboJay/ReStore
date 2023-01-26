@@ -1,6 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import { history } from "../..";
+import { counterSlice } from "../../features/contact/counterSlice";
 
 const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
 
@@ -70,9 +71,6 @@ const Basket = {
     removeItem: (productId: number, quantity = 1) => requests.delete(`basket?productId=${productId}&quantity=${quantity}`)
     
 }    
-
-
-
 
 const agent = {
     Catalog,
